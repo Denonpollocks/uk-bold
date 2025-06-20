@@ -10,69 +10,81 @@ export default function Header() {
 
   const isActive = (path: string) => pathname === path;
 
+  const navigationItems = [
+    { href: '/', label: 'Search Flights', icon: '🔍' },
+    { href: '/flight-deals', label: 'Flight Deals', icon: '💰' },
+    { href: '/compare-airlines', label: 'Compare Airlines', icon: '✈️' },
+    { href: '/best-time-to-book', label: 'Best Time to Book', icon: '📅' },
+    { href: '/travel-agencies', label: 'Travel Agencies', icon: '🏢' },
+    { href: '/blog', label: 'Blog', icon: '📝' },
+    { href: '/about', label: 'About Us', icon: 'ℹ️' },
+    { href: '/contact', label: 'Contact', icon: '📞' },
+  ];
+
   return (
-    <header className="bg-white">
+    <header className="bg-white shadow-sm relative z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo and Brand */}
           <Link href="/" className="flex items-center space-x-3">
-            <span className="text-2xl font-bold text-black">Halo Flights</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">H</span>
+            </div>
+            <span className="text-2xl font-bold text-gray-900">Halo Flights</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               href="/" 
-              className={`text-sm ${isActive('/') ? 'text-black font-semibold' : 'text-black hover:text-black'}`}
+              className={`text-sm transition-colors duration-200 ${isActive('/') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
             >
               Search Flights
             </Link>
             <Link 
               href="/flight-deals" 
-              className={`text-sm ${isActive('/flight-deals') ? 'text-black font-semibold' : 'text-black hover:text-black'}`}
+              className={`text-sm transition-colors duration-200 ${isActive('/flight-deals') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
             >
               Flight Deals
             </Link>
             <Link 
               href="/compare-airlines" 
-              className={`text-sm ${isActive('/compare-airlines') ? 'text-black font-semibold' : 'text-black hover:text-black'}`}
+              className={`text-sm transition-colors duration-200 ${isActive('/compare-airlines') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
             >
               Compare Airlines
             </Link>
             <Link 
-              href="/" 
-              className={`text-sm ${isActive('/') ? 'text-black font-semibold' : 'text-black hover:text-black'}`}
+              href="/best-time-to-book" 
+              className={`text-sm transition-colors duration-200 ${isActive('/best-time-to-book') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
             >
               Best Time to Book
             </Link>
             <Link 
-              href="/" 
-              className={`text-sm ${isActive('/') ? 'text-black font-semibold' : 'text-black hover:text-black'}`}
+              href="/travel-agencies" 
+              className={`text-sm transition-colors duration-200 ${isActive('/travel-agencies') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
             >
               Travel Agencies
             </Link>
             <Link 
-              href="/" 
-              className={`text-sm ${isActive('/') ? 'text-black font-semibold' : 'text-black hover:text-black'}`}
+              href="/blog" 
+              className={`text-sm transition-colors duration-200 ${isActive('/blog') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
             >
               Blog
             </Link>
             
             <Link 
               href="/about" 
-              className={`text-sm ${isActive('/about') ? 'text-black font-semibold' : 'text-black hover:text-black'}`}
+              className={`text-sm transition-colors duration-200 ${isActive('/about') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
             >
               About Us
             </Link>
             <Link 
               href="/contact" 
-              className={`text-sm ${isActive('/contact') ? 'text-black font-semibold' : 'text-black hover:text-black'}`}
+              className={`text-sm transition-colors duration-200 ${isActive('/contact') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
             >
               Contact
             </Link>
-            <button
-              className="bg-black text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-50"
-            >
+            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
               My Bookings
             </button>
           </div>
@@ -80,52 +92,159 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-black focus:outline-none"
+            className="md:hidden relative w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-              {isMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <span className={`bg-gray-700 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+              <span className={`bg-gray-700 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+              <span className={`bg-gray-700 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+            </div>
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4">
-              <Link 
-                href="/" 
-                className={`text-sm ${isActive('/') ? 'text-black font-semibold' : 'text-blue-100 hover:text-black'}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Search Flights
-              </Link>
-              <Link 
-                href="/about" 
-                className={`text-sm ${isActive('/about') ? 'text-black font-semibold' : 'text-blue-100 hover:text-black'}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About Us
-              </Link>
-              <Link 
-                href="/contact" 
-                className={`text-sm ${isActive('/contact') ? 'text-black font-semibold' : 'text-blue-100 hover:text-black'}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={() => setIsMenuOpen(false)} />
+        )}
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          {/* Mobile Menu Header */}
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">H</span>
+                </div>
+                <div>
+                  <h2 className="text-white font-bold text-lg">Halo Flights</h2>
+                  <p className="text-blue-100 text-sm">Your travel companion</p>
+                </div>
+              </div>
               <button
-                  className="bg-black text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-50 w-full text-left"
+                onClick={() => setIsMenuOpen(false)}
+                className="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
               >
-                My Bookings
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
           </div>
-        )}
+
+          {/* Mobile Menu Content */}
+          <div className="px-6 py-6 flex-1 overflow-y-auto">
+            {/* Quick Actions */}
+            <div className="mb-8">
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Quick Actions</h3>
+              <div className="grid grid-cols-2 gap-3">
+                <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 rounded-xl text-center hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                  <div className="text-2xl mb-2">✈️</div>
+                  <div className="text-sm font-medium">Search Flights</div>
+                </button>
+                <button className="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-xl text-center hover:from-green-600 hover:to-emerald-600 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                  <div className="text-2xl mb-2">📋</div>
+                  <div className="text-sm font-medium">My Bookings</div>
+                </button>
+              </div>
+            </div>
+
+            {/* Navigation Links */}
+            <div className="mb-8">
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Navigation</h3>
+              <div className="space-y-2">
+                {navigationItems.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className={`flex items-center space-x-4 p-3 rounded-xl transition-all duration-200 ${
+                      isActive(item.href)
+                        ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600'
+                        : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="text-xl">{item.icon}</span>
+                    <span className="font-medium">{item.label}</span>
+                    {isActive(item.href) && (
+                      <div className="ml-auto w-2 h-2 bg-blue-600 rounded-full"></div>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Support Section */}
+            <div className="mb-8">
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Support</h3>
+              <div className="bg-gray-50 rounded-xl p-4">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Need Help?</h4>
+                    <p className="text-sm text-gray-600">24/7 Customer Support</p>
+                  </div>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="flex-1 bg-white text-gray-700 py-2 px-3 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-200">
+                    Chat
+                  </button>
+                  <button className="flex-1 bg-white text-gray-700 py-2 px-3 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-200">
+                    Call
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* App Download */}
+            <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-4 text-white">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="text-2xl">📱</div>
+                <div>
+                  <h4 className="font-semibold">Download Our App</h4>
+                  <p className="text-sm text-purple-100">Get exclusive mobile deals</p>
+                </div>
+              </div>
+              <div className="flex space-x-2">
+                <button className="flex-1 bg-white/20 hover:bg-white/30 py-2 px-3 rounded-lg text-sm font-medium transition-colors duration-200">
+                  iOS
+                </button>
+                <button className="flex-1 bg-white/20 hover:bg-white/30 py-2 px-3 rounded-lg text-sm font-medium transition-colors duration-200">
+                  Android
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Menu Footer */}
+          <div className="border-t border-gray-200 px-6 py-4">
+            <div className="flex items-center justify-between text-sm text-gray-500">
+              <span>© 2024 Halo Flights</span>
+              <div className="flex space-x-4">
+                <button className="hover:text-blue-600 transition-colors duration-200">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                  </svg>
+                </button>
+                <button className="hover:text-blue-600 transition-colors duration-200">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                  </svg>
+                </button>
+                <button className="hover:text-blue-600 transition-colors duration-200">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
   );
-} 
+}
