@@ -10,36 +10,20 @@ export const metadata: Metadata = {
 
 export default function FlightDeals() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section with Grid Layout */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 py-24 overflow-hidden">
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="grid grid-cols-8 gap-4 h-full transform rotate-12 scale-150">
-            {Array.from({ length: 64 }).map((_, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-lg animate-pulse"
-                style={{
-                  animationDelay: `${i * 0.1}s`,
-                  animationDuration: `${2 + (i % 3)}s`
-                }}
-              ></div>
-            ))}
-          </div>
-        </div>
-
-        {/* Floating Elements */}
+    <main className="bg-white">
+      {/* Hero Section */}
+      <section className="relative py-20" style={{ backgroundColor: '#dc0069' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-yellow-400/20 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-pink-400/20 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-green-400/20 rounded-full animate-bounce" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-20 right-10 w-12 h-12 bg-blue-400/20 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+          <Image
+            src="https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg"
+            alt="Flight deals"
+            fill
+            className="object-cover opacity-20"
+          />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Badge */}
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-8 border border-white/20">
               <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -47,22 +31,21 @@ export default function FlightDeals() {
               ✨ Exclusive Flight Deals Hub
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Discover the Best
-              <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              <span className="block text-yellow-400">
                 Flight Deals
               </span>
               from the UK
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto mb-12">
+            <p className="text-xl text-gray-200 leading-relaxed max-w-4xl mx-auto mb-12">
               Looking for cheap flight fares without spending hours comparing airline ticket prices? 
               You've landed in the right place. Our curated flight deals page brings you the most 
               up-to-date offers across major airlines, exclusive last-minute discounts, and seasonal 
               sales — all tailored for UK travellers.
             </p>
 
-            {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {[
                 { number: "500+", label: "Airlines", icon: "✈️" },
@@ -78,11 +61,10 @@ export default function FlightDeals() {
               ))}
             </div>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/search" 
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-lg rounded-full hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                className="inline-flex items-center px-8 py-4 bg-yellow-400 text-black font-bold text-lg rounded-full hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 shadow-2xl"
               >
                 <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -105,16 +87,16 @@ export default function FlightDeals() {
 
       {/* Latest Airline Deals Section */}
       <section id="latest-deals" className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-indigo-50/30"></div>
+        <div className="absolute inset-0 bg-gray-50/30"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-8 shadow-2xl">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6 shadow-2xl" style={{ backgroundColor: '#dc0069' }}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Latest Airline Deals You Don't Want to Miss
               </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -164,13 +146,13 @@ export default function FlightDeals() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div className="absolute top-4 left-4">
-                      <div className={`w-12 h-12 bg-${deal.color}-100 rounded-full flex items-center justify-center`}>
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                         <span className="text-2xl">{deal.icon}</span>
                       </div>
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors">
                       {deal.title}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -184,7 +166,8 @@ export default function FlightDeals() {
             <div className="text-center">
               <Link 
                 href="/search" 
-                className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                className="inline-flex items-center px-10 py-5 text-white font-bold text-lg rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                style={{ backgroundColor: '#dc0069' }}
               >
                 See today's top airline deals
                 <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,7 +180,7 @@ export default function FlightDeals() {
       </section>
 
       {/* Black Friday Deals Section */}
-      <section className="py-20 bg-gradient-to-br from-red-900 via-purple-900 to-indigo-900 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#dc0069' }}>
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0">
           <Image
@@ -207,28 +190,12 @@ export default function FlightDeals() {
             className="object-cover opacity-10"
           />
         </div>
-        
-        {/* Animated particles */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-ping"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${2 + Math.random() * 2}s`
-              }}
-            ></div>
-          ))}
-        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-8 shadow-2xl animate-pulse">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-yellow-400 rounded-full mb-8 shadow-2xl animate-pulse">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
@@ -251,24 +218,21 @@ export default function FlightDeals() {
                   {
                     icon: "✈️",
                     title: "British Airways, EasyJet & Finnair",
-                    subtitle: "Premium & Budget Airlines",
-                    color: "red"
+                    subtitle: "Premium & Budget Airlines"
                   },
                   {
                     icon: "🌍",
                     title: "Multi-city routes using Skyscanner",
-                    subtitle: "Complex Itineraries",
-                    color: "blue"
+                    subtitle: "Complex Itineraries"
                   },
                   {
                     icon: "⚡",
                     title: "Flash sales from top travel agencies",
-                    subtitle: "Limited Time Offers",
-                    color: "purple"
+                    subtitle: "Limited Time Offers"
                   }
                 ].map((deal, index) => (
                   <div key={index} className="text-center group">
-                    <div className={`w-20 h-20 bg-${deal.color}-100/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-4xl">{deal.icon}</span>
                     </div>
                     <h4 className="font-bold text-white mb-2 text-lg">{deal.title}</h4>
@@ -281,7 +245,7 @@ export default function FlightDeals() {
             <div className="text-center">
               <Link 
                 href="/flight-deals/black-friday-flight-deals" 
-                className="inline-flex items-center px-12 py-6 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-xl rounded-full hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                className="inline-flex items-center px-12 py-6 bg-yellow-400 text-black font-bold text-xl rounded-full hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 shadow-2xl"
               >
                 Explore Black Friday flight offers
                 <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -295,17 +259,17 @@ export default function FlightDeals() {
 
       {/* Last-Minute Breaks Section */}
       <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-50/30 to-red-50/30"></div>
+        <div className="absolute inset-0 bg-gray-50/30"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mb-8 shadow-2xl">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-8 shadow-2xl" style={{ backgroundColor: '#dc0069' }}>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
                   Last-Minute Breaks for the Spontaneous Traveler
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -318,24 +282,21 @@ export default function FlightDeals() {
                     {
                       icon: "⚡",
                       title: "British Airways Last-Minute",
-                      description: "British Airways last-minute breaks with hotel bundles",
-                      color: "orange"
+                      description: "British Airways last-minute breaks with hotel bundles"
                     },
                     {
                       icon: "✈️",
                       title: "Standby Flights",
-                      description: "Standby flights available at discounted rates",
-                      color: "blue"
+                      description: "Standby flights available at discounted rates"
                     },
                     {
                       icon: "🤝",
                       title: "Partnered Offers",
-                      description: "Partnered offers from trusted UK travel agencies",
-                      color: "green"
+                      description: "Partnered offers from trusted UK travel agencies"
                     }
                   ].map((item, index) => (
                     <div key={index} className="flex items-start space-x-4 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                      <div className={`w-12 h-12 bg-${item.color}-100 rounded-full flex items-center justify-center flex-shrink-0`}>
+                      <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <span className="text-2xl">{item.icon}</span>
                       </div>
                       <div>
@@ -347,8 +308,9 @@ export default function FlightDeals() {
                 </div>
                 
                 <Link 
-                  href="/last-minute-deals" 
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold text-lg rounded-full hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  href="/flight-deals/last-minute-deals" 
+                  className="inline-flex items-center px-8 py-4 text-white font-bold text-lg rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  style={{ backgroundColor: '#dc0069' }}
                 >
                   Browse Last-Minute Flight Deals
                   <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -368,11 +330,10 @@ export default function FlightDeals() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>
                 
-                {/* Floating cards */}
                 <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 animate-bounce" style={{ animationDuration: '3s' }}>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#dc0069' }}>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -403,16 +364,16 @@ export default function FlightDeals() {
       </section>
 
       {/* Cheap Flights by City Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 relative">
+      <section className="py-20 bg-gray-50 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mb-8 shadow-2xl">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6 shadow-2xl" style={{ backgroundColor: '#dc0069' }}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 </svg>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Cheap Flights from the UK – By City & Season
               </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -424,7 +385,7 @@ export default function FlightDeals() {
             
             <div className="bg-white rounded-3xl shadow-2xl p-8 mb-12 border border-gray-100">
               <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center justify-center">
-                <span className="text-yellow-500 mr-4 text-4xl">⭐</span>
+                <span className="mr-4 text-4xl" style={{ color: '#dc0069' }}>⭐</span>
                 What makes this page unique:
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -432,24 +393,21 @@ export default function FlightDeals() {
                   {
                     icon: "📍",
                     title: "Localized Filtering",
-                    subtitle: "\"Flights near me\" filtering",
-                    color: "yellow"
+                    subtitle: "\"Flights near me\" filtering"
                   },
                   {
                     icon: "💰",
                     title: "Price Breakdown",
-                    subtitle: "By airfare class",
-                    color: "green"
+                    subtitle: "By airfare class"
                   },
                   {
                     icon: "🏢",
                     title: "Top Agency Offers",
-                    subtitle: "Top UK travel agency offers included",
-                    color: "blue"
+                    subtitle: "Top UK travel agency offers included"
                   }
                 ].map((feature, index) => (
                   <div key={index} className="text-center group">
-                    <div className={`w-20 h-20 bg-${feature.color}-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <div className="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <span className="text-3xl">{feature.icon}</span>
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2 text-lg">{feature.title}</h4>
@@ -461,8 +419,9 @@ export default function FlightDeals() {
             
             <div className="text-center">
               <Link 
-                href="/city-flights" 
-                className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-yellow-600 to-orange-600 text-white font-bold text-lg rounded-full hover:from-yellow-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                href="/flight-deals/cheap-flights-from-uk" 
+                className="inline-flex items-center px-10 py-5 text-white font-bold text-lg rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                style={{ backgroundColor: '#dc0069' }}
               >
                 Compare Cheap Flights from Your City
                 <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -490,7 +449,6 @@ export default function FlightDeals() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>
                 
-                {/* Floating elements */}
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-purple-100 rounded-full flex items-center justify-center shadow-xl animate-pulse">
                   <span className="text-2xl">🌍</span>
                 </div>
@@ -500,12 +458,12 @@ export default function FlightDeals() {
               </div>
               
               <div className="order-1 lg:order-2">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full mb-8 shadow-2xl">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-8 shadow-2xl" style={{ backgroundColor: '#dc0069' }}>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                   </svg>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
                   Multi-City & Flexible Travel Deals
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -514,9 +472,9 @@ export default function FlightDeals() {
                   money by bundling flights and maximize value.
                 </p>
                 
-                <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8 mb-8 border border-purple-100">
+                <div className="bg-pink-50 rounded-2xl p-8 mb-8 border border-pink-100">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span className="text-purple-600 mr-3 text-3xl">👨‍💼</span>
+                    <span className="mr-3 text-3xl" style={{ color: '#dc0069' }}>👨‍💼</span>
                     Ideal for:
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -538,7 +496,7 @@ export default function FlightDeals() {
                       }
                     ].map((type, index) => (
                       <div key={index} className="text-center">
-                        <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
                           <span className="text-2xl">{type.icon}</span>
                         </div>
                         <h4 className="font-bold text-gray-900 mb-1">{type.title}</h4>
@@ -550,7 +508,8 @@ export default function FlightDeals() {
                 
                 <Link 
                   href="/multi-city" 
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-lg rounded-full hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="inline-flex items-center px-8 py-4 text-white font-bold text-lg rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  style={{ backgroundColor: '#dc0069' }}
                 >
                   Start Planning Your Multi-City Trip
                   <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -564,16 +523,16 @@ export default function FlightDeals() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-8 shadow-2xl">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6 shadow-2xl" style={{ backgroundColor: '#dc0069' }}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 FAQs – Everything About Flight Deals
               </h2>
               <p className="text-xl text-gray-600">
@@ -598,7 +557,7 @@ export default function FlightDeals() {
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-start">
-                    <span className="text-indigo-600 mr-3 text-2xl">Q:</span>
+                    <span className="mr-3 text-2xl" style={{ color: '#dc0069' }}>Q:</span>
                     {faq.question}
                   </h3>
                   <p className="text-gray-600 leading-relaxed ml-8">
@@ -613,7 +572,7 @@ export default function FlightDeals() {
       </section>
 
       {/* CTA Footer Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#dc0069' }}>
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0">
           <Image
@@ -626,8 +585,8 @@ export default function FlightDeals() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-8 shadow-2xl animate-pulse">
-              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-yellow-400 rounded-full mb-8 shadow-2xl animate-pulse">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
               </svg>
             </div>
@@ -641,7 +600,7 @@ export default function FlightDeals() {
             </p>
             <Link 
               href="/search" 
-              className="inline-flex items-center px-12 py-6 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-xl rounded-full hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              className="inline-flex items-center px-12 py-6 bg-yellow-400 text-black font-bold text-xl rounded-full hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 shadow-2xl"
             >
               <svg className="w-8 h-8 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
