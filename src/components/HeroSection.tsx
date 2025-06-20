@@ -19,7 +19,7 @@ export default function HeroSection({ title, subtitle, backgroundImage }: HeroSe
   };
 
   return (
-    <section className="relative bg-indigo-900 py-20">
+    <section className="relative py-20" style={{ backgroundColor: '#dc0069' }}>
       <div className="absolute inset-0 overflow-hidden">
         <Image
           src={backgroundImage}
@@ -42,4 +42,4 @@ export default function HeroSection({ title, subtitle, backgroundImage }: HeroSe
       </div>
     </section>
   );
-} 
+}

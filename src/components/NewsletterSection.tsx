@@ -26,7 +26,7 @@ export default function NewsletterSection({ title, description }: NewsletterSect
   };
 
   return (
-    <section className="bg-indigo-900 py-16">
+    <section className="py-16" style={{ backgroundColor: '#dc0069' }}>
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
@@ -41,13 +41,14 @@ export default function NewsletterSection({ title, description }: NewsletterSect
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
               required
             />
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+              className="bg-white px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50 font-semibold"
+              style={{ color: '#dc0069' }}
             >
               {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
             </button>
@@ -62,4 +63,4 @@ export default function NewsletterSection({ title, description }: NewsletterSect
       </div>
     </section>
   );
-} 
+}

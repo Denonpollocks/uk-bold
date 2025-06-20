@@ -18,12 +18,98 @@ export default function Home() {
       <HeroSection {...homeData.hero} />
       <PopularDestinations destinations={homeData.popularDestinations} />
 
-      {/* Featured Flight Deals */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-indigo-50/30"></div>
+      {/* Easy Booking Process Section */}
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-pink-600 rounded-full mb-6" style={{ backgroundColor: '#dc0069' }}>
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Easy 3-Step Booking Process</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Book your perfect flight in just three simple steps. Our streamlined process makes travel planning effortless.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-24 h-24 mx-auto rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300" style={{ backgroundColor: '#dc0069' }}>
+                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md border-2" style={{ borderColor: '#dc0069' }}>
+                  <span className="text-sm font-bold" style={{ color: '#dc0069' }}>1</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Search & Compare</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Enter your travel details and instantly compare flights from 500+ airlines. 
+                Our smart search finds the best deals in seconds.
+              </p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-24 h-24 mx-auto bg-gray-100 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300">
+                  <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-gray-300">
+                  <span className="text-sm font-bold text-gray-600">2</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Select Your Flight</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Choose from direct flights, budget options, or premium services. 
+                Filter by price, duration, or airline preferences.
+              </p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-24 h-24 mx-auto bg-gray-100 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300">
+                  <svg className="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  </svg>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-gray-300">
+                  <span className="text-sm font-bold text-gray-600">3</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Book & Pay Securely</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Complete your booking with our secure payment system. 
+                Get instant confirmation and e-tickets delivered to your email.
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <Link 
+              href="/" 
+              className="inline-flex items-center px-8 py-4 text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              style={{ backgroundColor: '#dc0069' }}
+            >
+              Start Your Journey Now
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Flight Deals */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50/30 to-pink-50/30"></div>
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ backgroundColor: '#dc0069' }}>
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
               </svg>
@@ -44,7 +130,7 @@ export default function Home() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-4 left-4 text-white px-3 py-1 rounded-full text-sm font-semibold" style={{ backgroundColor: '#dc0069' }}>
                   Hot Deal
                 </div>
               </div>
@@ -52,7 +138,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">London to Dubai</h3>
                 <p className="text-gray-600 mb-4">Direct flights from £299</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-blue-600">£299</span>
+                  <span className="text-2xl font-bold" style={{ color: '#dc0069' }}>£299</span>
                   <span className="text-sm text-gray-500 line-through">£450</span>
                 </div>
               </div>
@@ -74,7 +160,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Manchester to Barcelona</h3>
                 <p className="text-gray-600 mb-4">Weekend getaway from £89</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-blue-600">£89</span>
+                  <span className="text-2xl font-bold" style={{ color: '#dc0069' }}>£89</span>
                   <span className="text-sm text-gray-500 line-through">£150</span>
                 </div>
               </div>
@@ -96,7 +182,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Birmingham to Rome</h3>
                 <p className="text-gray-600 mb-4">Cultural escape from £129</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-blue-600">£129</span>
+                  <span className="text-2xl font-bold" style={{ color: '#dc0069' }}>£129</span>
                   <span className="text-sm text-gray-500 line-through">£220</span>
                 </div>
               </div>
@@ -106,7 +192,8 @@ export default function Home() {
           <div className="text-center">
             <Link 
               href="/flight-deals" 
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-8 py-4 text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              style={{ backgroundColor: '#dc0069' }}
             >
               Explore All Flight Deals
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,12 +205,12 @@ export default function Home() {
       </section>
 
       {/* Cheap Flights from UK */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 relative">
+      <section className="py-20 bg-gray-50 relative">
         <div className="absolute inset-0 bg-white/80"></div>
         <div className="container mx-auto px-4 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ backgroundColor: '#dc0069' }}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -137,18 +224,19 @@ export default function Home() {
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                  <div className="text-3xl font-bold mb-2" style={{ color: '#dc0069' }}>500+</div>
                   <div className="text-gray-600">Airlines</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
-                  <div className="text-3xl font-bold text-green-600 mb-2">£29</div>
+                  <div className="text-3xl font-bold mb-2" style={{ color: '#dc0069' }}>£29</div>
                   <div className="text-gray-600">From</div>
                 </div>
               </div>
               
               <Link 
                 href="/flight-deals/cheap-flights-from-uk" 
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full hover:from-green-700 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center px-8 py-4 text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                style={{ backgroundColor: '#dc0069' }}
               >
                 Find Cheap Flights Near You
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,8 +257,8 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl border border-gray-100">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#dc0069' }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -187,7 +275,7 @@ export default function Home() {
 
       {/* Last Minute Flights */}
       <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-50/30 to-red-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-50/30 to-gray-50/30"></div>
         <div className="container mx-auto px-4 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
@@ -202,8 +290,8 @@ export default function Home() {
               </div>
               <div className="absolute -top-6 -right-6 bg-white rounded-xl p-6 shadow-xl border border-gray-100">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#dc0069' }}>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -216,7 +304,7 @@ export default function Home() {
             </div>
             
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ backgroundColor: '#dc0069' }}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -229,8 +317,8 @@ export default function Home() {
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-4 bg-white rounded-xl p-4 shadow-md border border-gray-100">
-                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#dc0069' }}>
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -241,8 +329,8 @@ export default function Home() {
                 </div>
                 
                 <div className="flex items-center space-x-4 bg-white rounded-xl p-4 shadow-md border border-gray-100">
-                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#dc0069' }}>
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                     </svg>
                   </div>
@@ -255,7 +343,8 @@ export default function Home() {
               
               <Link 
                 href="/flight-deals/last-minute" 
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-full hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center px-8 py-4 text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                style={{ backgroundColor: '#dc0069' }}
               >
                 View Last-Minute Deals
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -268,7 +357,7 @@ export default function Home() {
       </section>
 
       {/* Black Friday Specials */}
-      <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#dc0069' }}>
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0">
           <Image
@@ -280,7 +369,7 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mb-8">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-8">
               <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
@@ -295,7 +384,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow-400 mb-2">70%</div>
+                <div className="text-4xl font-bold text-white mb-2">70%</div>
                 <div className="text-white font-semibold mb-2">OFF</div>
                 <div className="text-gray-300 text-sm">Selected Routes</div>
               </div>
@@ -303,7 +392,7 @@ export default function Home() {
             
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow-400 mb-2">24H</div>
+                <div className="text-4xl font-bold text-white mb-2">24H</div>
                 <div className="text-white font-semibold mb-2">FLASH SALES</div>
                 <div className="text-gray-300 text-sm">Limited Time Only</div>
               </div>
@@ -311,7 +400,7 @@ export default function Home() {
             
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow-400 mb-2">500+</div>
+                <div className="text-4xl font-bold text-white mb-2">500+</div>
                 <div className="text-white font-semibold mb-2">AIRLINES</div>
                 <div className="text-gray-300 text-sm">Participating</div>
               </div>
@@ -321,7 +410,8 @@ export default function Home() {
           <div className="text-center">
             <Link 
               href="/flight-deals/black-friday" 
-              className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-lg rounded-full hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              className="inline-flex items-center px-10 py-5 bg-white font-bold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              style={{ color: '#dc0069' }}
             >
               See Black Friday Flight Deals
               <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -337,7 +427,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ backgroundColor: '#dc0069' }}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
@@ -350,8 +440,8 @@ export default function Home() {
               
               <div className="space-y-6 mb-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mt-1">
-                    <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#dc0069' }}>
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -362,8 +452,8 @@ export default function Home() {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mt-1">
-                    <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#dc0069' }}>
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -374,8 +464,8 @@ export default function Home() {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mt-1">
-                    <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#dc0069' }}>
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -388,7 +478,8 @@ export default function Home() {
               
               <Link 
                 href="/best-time-to-book-flights" 
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-full hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center px-8 py-4 text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                style={{ backgroundColor: '#dc0069' }}
               >
                 Read the Full Booking Guide
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -409,7 +500,7 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-6 shadow-xl border border-gray-100">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-600 mb-1">35%</div>
+                  <div className="text-3xl font-bold mb-1" style={{ color: '#dc0069' }}>35%</div>
                   <div className="text-sm text-gray-600">Average Savings</div>
                 </div>
               </div>
@@ -419,10 +510,10 @@ export default function Home() {
       </section>
 
       {/* Airline Comparison Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 relative">
+      <section className="py-20 bg-gray-50 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ backgroundColor: '#dc0069' }}>
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
@@ -479,7 +570,8 @@ export default function Home() {
           <div className="text-center">
             <Link 
               href="/compare-airlines" 
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center px-8 py-4 text-white font-semibold rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              style={{ backgroundColor: '#dc0069' }}
             >
               Start Comparing Airlines
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -494,7 +586,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style={{ backgroundColor: '#dc0069' }}>
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
@@ -526,9 +618,9 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors">{tip.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors">{tip.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{tip.content}</p>
-                  <a href="#" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium group-hover:translate-x-1 transition-transform">
+                  <a href="#" className="inline-flex items-center font-medium group-hover:translate-x-1 transition-transform" style={{ color: '#dc0069' }}>
                     Read More
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
